@@ -5,7 +5,9 @@ sequenceDiagram
     
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
+    activate browser
     server-->>browser: HTML document
+    deactivate browser
     deactivate server
     
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
