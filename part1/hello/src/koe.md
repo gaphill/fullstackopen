@@ -85,20 +85,21 @@ flowchart TB
 ```
 
 ```mermaid
-gitGraph:
-       commit id: "checkout"
-       branch bugfix/123
-       branch dev
-       checkout dev
+gitGraph
+   commit id: "initial"
+   branch bugfix/123
+   commit id: "commit 1"
+   commit id: "commit 2"
+   
+   branch dev
+   checkout dev
+   commit id: "dev init"
 
-       checkout bugfix/123
-       commit id: "commit 1"
-       commit id: "commit 2"
+   checkout main
+   commit id: "main init"
+   merge bugfix/123 id: "bugfix PR" tag: "bugfix"
 
-       checkout main
-       commit id: "main init"
-       merge bugfix/123 id: "bugfix PR" tag: "bugfix"
+   checkout dev
+   merge main id: "main merge PR" tag: "rebase"
 
-       checkout dev
-       merge main id: "main merge PR" tag: "rebase"
 ```
