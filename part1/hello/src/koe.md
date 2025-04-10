@@ -83,3 +83,21 @@ flowchart TB
     linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 stroke:#0f0,stroke-width:2px;
     linkStyle 19,20,21,22,23,24,25 stroke:#f00,stroke-width:2px;
 ```
+
+```mermaid
+gitGraph:
+       commit id: "checkout"
+       branch bugfix/123
+       branch dev
+       checkout dev
+
+       checkout bugfix/123
+       commit id: "commit 1"
+       commit id: "commit 2"
+
+       checkout main
+       merge bugfix/123 id: "bugfix PR" tag: "bugfix"
+
+       checkout dev
+       merge main id: "main merge PR" tag: "rebase"
+```
