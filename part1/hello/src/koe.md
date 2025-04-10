@@ -96,7 +96,6 @@ gitGraph
    commit id: "dev init"
 
    checkout main
-   commit id: "main init"
    merge bugfix/123 id: "bugfix PR" tag: "bugfix"
 
    checkout dev
